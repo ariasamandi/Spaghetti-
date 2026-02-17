@@ -1,0 +1,146 @@
+================================================================================
+PROCESS LOG — CSCI 570 Assignment 1 (Spagetti Recipe Search App)
+================================================================================
+
+--------------------------------------------------------------------------------
+INTRODUCTION
+--------------------------------------------------------------------------------
+
+Summary:
+  Using a "heavy vibe" / specification-first approach: most effort goes into
+  defining and documenting what we want to accomplish in detail, then using
+  Cursor to implement.
+
+Approach:
+  - Focus on clear specifications and detailed documentation.
+  - Let implementation follow from well-defined goals.
+
+--------------------------------------------------------------------------------
+PRE-PROMPTING / SETUP
+--------------------------------------------------------------------------------
+
+Before using Cursor, I built the initial version of the app:
+
+  • Implemented the core flow in vanilla JavaScript using getElementById to
+    read user input, call the MealDB API, and update the DOM with results.
+  • Used basic HTML: a search input, submit button, and a results container
+    with a list for meal names and images.
+
+Planning advice (ChatGPT):
+  I asked ChatGPT for the best way to hide and show elements when switching
+  between the search screen and the results screen. The recommendation was to
+  use a CSS class (e.g. .hidden { display: none; }) and add/remove that class
+  in JavaScript instead of manipulating styles directly.
+
+State when I started using Cursor:
+  The app could search and display meal data from the API, but it had no
+  styling, no clear direction for how to improve the UI, and no way to return
+  to search after viewing results (e.g. a "Search again" or back button).
+  I decided to use Cursor from this point to implement the "vibe coding"
+  portion—specifying what I wanted and letting the AI handle implementation.
+
+--------------------------------------------------------------------------------
+PROMPTS (Cursor)
+--------------------------------------------------------------------------------
+
+1. Styling — search and results
+   "can we style the app so that it looks nice when the user enters their food
+   and then also when the results pop up lets style that so it looks nice in
+   multiple cards"
+
+   AI RESPONSE SUMMARY:
+   - Styled the whole app: dark gradient background, DM Sans font, centered
+     search section with title, tagline, and a polished input + gold Search
+     button.
+   - Rendered results as a responsive grid of cards (image + meal name per
+     card) with hover effects and a "Search again" button in the results
+     header.
+   - Updated HTML structure (form, results header, results-grid div, no-results
+     message) and JS to build meal cards in the grid and handle empty/error
+     states.
+
+   WHAT I LEARNED:
+
+
+   ISSUES ENCOUNTERED:
+
+
+   HOW I FIXED IT:
+
+
+2. Bug — "Search again" button missing on second results view
+   "why when i search and get to results then when i search again the button
+   isnt there the second time that says search again"
+
+   AI RESPONSE SUMMARY:
+   - Found that showSearch() was clearing the entire results container with
+     innerHTML = "", which removed the "Search again" button from the DOM.
+   - Fixed by having showSearch() only clear the results grid and the
+     no-results message, and having searchRecipes() write only to the
+     results-grid div so the header (and button) always stay in the DOM.
+
+   WHAT I LEARNED:
+
+
+   ISSUES ENCOUNTERED:
+
+
+   HOW I FIXED IT:
+
+
+3. Re-apply changes
+   "I rejected the changes before but this time i want to accept"
+
+   AI RESPONSE SUMMARY:
+   - Re-applied the full CSS (search + results styling, card grid) and the
+     updated JS (cards in results grid, showSearch only clearing the grid)
+     so the "Search again" button would persist and the UI would match the
+     previously offered design.
+
+   WHAT I LEARNED:
+
+
+   ISSUES ENCOUNTERED:
+
+
+   HOW I FIXED IT:
+
+
+4. Process log — cleanup and prompt documentation
+   "I am creating a process_log.txt file that will document my cursor prompts.
+   Can you clean up my txt file since I am not as familiar with correct
+   formatting standards to make good documentation and then as well put all
+   our prompts in the prompt section that we have inputting so far"
+
+   AI RESPONSE SUMMARY:
+   - Reformatted the log with a clear title block, section dividers, and
+     consistent headings (Introduction, Prompts, Notes).
+   - Corrected small typos in the intro and turned the approach into bullet
+     points.
+   - Listed all prompts (1–4) with short labels and full prompt text in
+     quotes, and added a NOTES section for follow-up.
+
+   WHAT I LEARNED:
+
+
+   ISSUES ENCOUNTERED:
+
+
+   HOW I FIXED IT:
+
+
+--------------------------------------------------------------------------------
+REFLECTION
+--------------------------------------------------------------------------------
+
+Most useful AI assistance:
+- 
+
+What I would do differently:
+- 
+
+Time spent: ~4 hours
+AI tools used: [ChatGPT / Cursor / GitHub Copilot]
+
+Tuesday Febuary 17th: 3:00PM - 4:00PM
+================================================================================

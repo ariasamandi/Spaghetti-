@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spagetti — Recipe Search</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <div id="search-container" class="search-section">
+            <h1 class="app-title">Spagetti</h1>
+            <p class="app-tagline">Find meals by name</p>
+            <form class="search-form" onsubmit="searchRecipes(document.getElementById('search').value); return false;">
+                <label for="search" class="sr-only">Search for a meal</label>
+                <input type="text" id="search" name="search" placeholder="e.g. pasta, chicken, salad…" required autocomplete="off">
+                <button type="submit" class="btn-search">Search</button>
+            </form>
+        </div>
+        <div id="results-container" class="results-section hidden">
+            <div class="results-header">
+                <button type="button" class="btn-back" onclick="showSearch()" aria-label="Back to search">← Search again</button>
+                <h2 class="results-title">Results</h2>
+            </div>
+            <div id="results-grid" class="results-grid"></div>
+            <p id="no-results" class="no-results hidden">No meals found. Try another search.</p>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
