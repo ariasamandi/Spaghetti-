@@ -1,0 +1,10 @@
+Specifications document
+
+I will go over the leftover features that need to be implemented. 
+
+When a user searches and we fetch from the API there should be a loading spinner indicating we are waiting for results
+
+Currently after we search we display the results with an image and a title in a card like component. This is good but we need to modify this a bit.
+We want to also add category to our display and also a feature where when we click the card then it gives us more details of the meal. 
+This includes the previous information as well as Ingredients, Instructions, and a Youtube Video Link. 
+

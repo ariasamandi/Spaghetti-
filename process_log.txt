@@ -60,12 +60,21 @@ PROMPTS (Cursor)
      states.
 
    WHAT I LEARNED:
+        - After aksing a few questions about why the styling choices were 
+        made I learned that Planning with components or boxes first. then using font standards,
+        matching color schemes also go into good design. Spacing system like using 8,16,24 px which we can do 
+        using rem. 
+        - Cursor used a classList.add() function which I learned was a way to add and remove classes to html elements.
+        
 
 
    ISSUES ENCOUNTERED:
+        - When searching we had a nice visual app but once we hit our newly built search again button that takes us to
+        the prevoius search bar and we search again on the second go that button disappears.  
 
 
    HOW I FIXED IT:
+        - 
 
 
 2. Bug — "Search again" button missing on second results view
@@ -128,6 +137,16 @@ PROMPTS (Cursor)
 
    HOW I FIXED IT:
 
+5. Specifications document
+
+I will go over the leftover features that need to be implemented. 
+
+When a user searches and we fetch from the API there should be a loading spinner indicating we are waiting for results
+
+Currently after we search we display the results with an image and a title in a card like component. This is good but we need to modify this a bit.
+We want to also add category to our display and also a feature where when we click the card then it gives us more details of the meal. 
+This includes the previous information as well as Ingredients, Instructions, and a Youtube Video Link. 
+
 
 --------------------------------------------------------------------------------
 REFLECTION
@@ -142,5 +161,6 @@ What I would do differently:
 Time spent: ~4 hours
 AI tools used: [ChatGPT / Cursor / GitHub Copilot]
 
-Tuesday Febuary 17th: 3:00PM - 4:00PM
+Saturday Febuary 14th: 12:00PM - 1:00PM
+Tuesday Febuary 17th: 3:00PM - 4:30PM
 ================================================================================
