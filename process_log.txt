@@ -130,33 +130,61 @@ PROMPTS (Cursor)
      quotes, and added a NOTES section for follow-up.
 
    WHAT I LEARNED:
+   - Using lots dashes and lines to indicate sections and including titles 
 
+
+
+   ISSUES ENCOUNTERED:
+   - Although it created its own documentation it needed more aspects of the assignment example
+
+
+   HOW I FIXED IT:
+   - Copy and pasted some of the missing documentation and filled it with my information. 
+
+5. Specifications document
+
+"I will go over the leftover features that need to be implemented. 
+
+When a user searches and we fetch from the API there should be a loading spinner indicating we are waiting for results
+
+Currently after we search we display the results with an image and a title in a card like component. This is good but we need to modify this a bit.
+We want to also add category to our display and also a feature where when we click the card then it gives us more details of the meal. 
+This includes the previous information as well as Ingredients, Instructions, and a Youtube Video Link. "
+
+AI RESPONSE SUMMARY:
+   - Rmplemented your Specificaitons.txt items in the app:
+  Added a loading spinner while the API request is in progress.
+  Updated result cards to show meal category under the title.
+  Made each card clickable to open a detailed meal view.
+  
+  Added a meal details modal showing:
+  title
+  image
+  category
+  ingredients list
+  instructions
+  YouTube link (only shown when available)
+  
+  
+   WHAT I LEARNED:
+    
 
    ISSUES ENCOUNTERED:
 
 
    HOW I FIXED IT:
 
-5. Specifications document
-
-I will go over the leftover features that need to be implemented. 
-
-When a user searches and we fetch from the API there should be a loading spinner indicating we are waiting for results
-
-Currently after we search we display the results with an image and a title in a card like component. This is good but we need to modify this a bit.
-We want to also add category to our display and also a feature where when we click the card then it gives us more details of the meal. 
-This includes the previous information as well as Ingredients, Instructions, and a Youtube Video Link. 
-
-
 --------------------------------------------------------------------------------
 REFLECTION
 --------------------------------------------------------------------------------
 
 Most useful AI assistance:
-- 
+- GPT-5.3 codex
 
 What I would do differently:
-- 
+- I would provide more detailed specifications similar to the assignment documentation and see if it produces better results
+- Also want to try generating the same prompt for different models and see which out outputs better results.
+
 
 Time spent: ~4 hours
 AI tools used: [ChatGPT / Cursor / GitHub Copilot]
