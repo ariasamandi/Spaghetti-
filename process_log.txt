@@ -21,9 +21,9 @@ PRE-PROMPTING / SETUP
 
 Before using Cursor, I built the initial version of the app:
 
-  • Implemented the core flow in vanilla JavaScript using getElementById to
+  - Implemented the core flow in vanilla JavaScript using getElementById to
     read user input, call the MealDB API, and update the DOM with results.
-  • Used basic HTML: a search input, submit button, and a results container
+  - Used basic HTML: a search input, submit button, and a results container
     with a list for meal names and images.
 
 Planning advice (ChatGPT):
@@ -60,22 +60,20 @@ PROMPTS (Cursor)
      states.
 
    WHAT I LEARNED:
-        - After aksing a few questions about why the styling choices were 
-        made I learned that Planning with components or boxes first. then using font standards,
-        matching color schemes also go into good design. Spacing system like using 8,16,24 px which we can do 
-        using rem. 
-        - Cursor used a classList.add() function which I learned was a way to add and remove classes to html elements.
-        
-
+   - Planning UI in components/sections first helps styling decisions become
+     more consistent.
+   - Design quality depends on font hierarchy, color contrast, and spacing
+     rhythm (for example 8/16/24 px spacing scales).
+   - classList.add() / classList.remove() is a clean way to toggle UI states
+     without directly changing inline styles.
 
    ISSUES ENCOUNTERED:
-        - When searching we had a nice visual app but once we hit our newly built search again button that takes us to
-        the prevoius search bar and we search again on the second go that button disappears.  
-
+   - After clicking "Search again" and searching a second time, the button
+     disappeared.
 
    HOW I FIXED IT:
-        - 
-
+   - Re-prompted with a focused bug description and updated DOM rendering logic
+     so content is injected into the results grid only.
 
 2. Bug — "Search again" button missing on second results view
    "why when i search and get to results then when i search again the button
@@ -89,13 +87,19 @@ PROMPTS (Cursor)
      results-grid div so the header (and button) always stay in the DOM.
 
    WHAT I LEARNED:
-
+   - Updating a parent element with innerHTML can accidentally remove nested
+     controls and event wiring.
+   - It is safer to keep static layout elements in place and only clear/update
+     dynamic content containers.
 
    ISSUES ENCOUNTERED:
-
+   - I initially did not realize that clearing the whole results container
+     removed the button itself.
 
    HOW I FIXED IT:
-
+   - Changed showSearch() to clear only the results-grid and no-results state.
+   - Kept the results header persistent in HTML so "Search again" always stays
+     available.
 
 3. Re-apply changes
    "I rejected the changes before but this time i want to accept"
@@ -107,13 +111,16 @@ PROMPTS (Cursor)
      previously offered design.
 
    WHAT I LEARNED:
-
+   - If I reject an edit by mistake, I can ask Cursor to re-apply the same
+     changes quickly.
+   - Keeping structure in HTML and logic in JS makes re-application cleaner.
 
    ISSUES ENCOUNTERED:
-
+   - Changes were accidentally rejected, so the app reverted to an older state.
 
    HOW I FIXED IT:
-
+   - Requested re-application explicitly and verified that both CSS and JS were
+     restored.
 
 4. Process log — cleanup and prompt documentation
    "I am creating a process_log.txt file that will document my cursor prompts.
@@ -130,18 +137,19 @@ PROMPTS (Cursor)
      quotes, and added a NOTES section for follow-up.
 
    WHAT I LEARNED:
-   - Using lots dashes and lines to indicate sections and including titles 
-
-
+   - Clear section headers, consistent spacing, and concise bullet points make
+     the log easier to review and grade.
+   - Capturing prompt text plus outcomes creates a useful trace of AI-assisted
+     development decisions.
 
    ISSUES ENCOUNTERED:
-   - Although it created its own documentation it needed more aspects of the assignment example
-
+   - The first draft needed more assignment-specific detail and reflection.
 
    HOW I FIXED IT:
-   - Copy and pasted some of the missing documentation and filled it with my information. 
+   - Added missing sections and customized the content with project-specific
+     notes.
 
-5. Specifications document
+5. Specifications document implementation
 
 "I will go over the leftover features that need to be implemented. 
 
@@ -152,27 +160,33 @@ We want to also add category to our display and also a feature where when we cli
 This includes the previous information as well as Ingredients, Instructions, and a Youtube Video Link. "
 
 AI RESPONSE SUMMARY:
-   - Rmplemented your Specificaitons.txt items in the app:
-  Added a loading spinner while the API request is in progress.
-  Updated result cards to show meal category under the title.
-  Made each card clickable to open a detailed meal view.
-  
-  Added a meal details modal showing:
-  title
-  image
-  category
-  ingredients list
-  instructions
-  YouTube link (only shown when available)
-  
-  
+   - Implemented the remaining features from Specifications.txt:
+     - Added a loading spinner while API results are being fetched.
+     - Added category text to each meal card.
+     - Added clickable cards that open a detailed meal modal.
+   - The modal now shows:
+     - title
+     - image
+     - category
+     - ingredients list
+     - instructions
+     - YouTube link (only when available)
+   - Added keyboard support to close the modal with the Escape key.
+
    WHAT I LEARNED:
-    
+   - A detailed spec gives AI clear implementation targets and better output.
+   - Breaking a feature into UI, behavior, and data mapping steps makes it
+     easier to build and debug.
 
    ISSUES ENCOUNTERED:
-
+   - In detailed view, the image looked cropped and did not show the full meal
+     image as expected.
 
    HOW I FIXED IT:
+   - Updated modal image CSS to use object-fit: contain with a max height so
+     the full image is visible.
+   - Tested alternate styling and reverted to the preferred version.
+
 
 --------------------------------------------------------------------------------
 REFLECTION
@@ -182,13 +196,15 @@ Most useful AI assistance:
 - GPT-5.3 codex
 
 What I would do differently:
-- I would provide more detailed specifications similar to the assignment documentation and see if it produces better results
-- Also want to try generating the same prompt for different models and see which out outputs better results.
+- I would provide more detailed specifications earlier and include explicit
+  acceptance criteria for each feature.
+- I also want to test the same prompt across multiple models and compare output
+  quality, speed, and edit accuracy.
 
 
 Time spent: ~4 hours
 AI tools used: [ChatGPT / Cursor / GitHub Copilot]
 
-Saturday Febuary 14th: 12:00PM - 1:00PM
-Tuesday Febuary 17th: 3:00PM - 4:30PM
+Saturday February 14th: 12:00 PM - 1:00 PM
+Tuesday February 17th: 3:00 PM - 4:30 PM
 ================================================================================
